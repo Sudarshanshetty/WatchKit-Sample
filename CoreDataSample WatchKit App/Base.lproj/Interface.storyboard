@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZPT-Lv-Fiv">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="QYm-i8-epM">
+            <objects>
+                <controller id="2uJ-p8-WWW" customClass="TableViewController" customModule="CoreDataSample_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="bgj-73-Ggs">
+                            <items>
+                                <tableRow identifier="therows" id="1ae-Mo-06h" customClass="rowcontroller" customModule="CoreDataSample_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="aKW-u4-U7s">
+                                        <items>
+                                            <imageView width="41" height="35" alignment="left" id="KHx-2i-80b"/>
+                                            <label width="93.5" height="39.5" alignment="left" text="Label" id="8sy-gv-KF7"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="theImage" destination="KHx-2i-80b" id="cB6-N5-bbi"/>
+                                        <outlet property="thelabel" destination="8sy-gv-KF7" id="fLt-Xm-Xra"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="thetable" destination="bgj-73-Ggs" id="XNb-Ge-jIc"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="619"/>
+        </scene>
+        <!--Recorder View Controller-->
+        <scene sceneID="Pwt-d2-tYU">
+            <objects>
+                <controller id="ZrI-Ka-Mzx" customClass="RecorderViewController" customModule="CoreDataSample_WatchKit_Extension">
+                    <items>
+                        <button width="1" height="29.5" alignment="left" title="Record" id="iLy-vR-cc7">
+                            <connections>
+                                <action selector="record" destination="ZrI-Ka-Mzx" id="cPu-EU-ZJ7"/>
+                            </connections>
+                        </button>
+                        <button width="1" height="18.5" alignment="left" title="Stop" id="VWF-yz-Hhn">
+                            <connections>
+                                <action selector="stop" destination="ZrI-Ka-Mzx" id="cuq-tK-er7"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Play" id="mxv-ww-tv1">
+                            <connections>
+                                <action selector="play" destination="ZrI-Ka-Mzx" id="Yzc-GU-JR3"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="playButton" destination="mxv-ww-tv1" id="yb9-Xj-xlj"/>
+                        <outlet property="recordButton" destination="iLy-vR-cc7" id="FZW-gn-xi6"/>
+                        <outlet property="stopButton" destination="VWF-yz-Hhn" id="Gz0-MG-6Jm"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="615" y="325"/>
+        </scene>
+        <!--Speech Dictation Controller-->
+        <scene sceneID="tPI-UP-ANQ">
+            <objects>
+                <controller id="Fop-FW-SbD" customClass="SpeechDictationController" customModule="CoreDataSample_WatchKit_Extension">
+                    <items>
+                        <separator alignment="left" id="kVr-uw-OC5"/>
+                        <dateLabel width="134" height="44.5" alignment="left" textAlignment="center" id="PdX-Wf-LHc">
+                            <dateFormatterStyle key="dateStyle" none="YES" short="YES"/>
+                            <dateFormatterStyle key="timeStyle" none="YES" short="YES"/>
+                        </dateLabel>
+                        <separator alignment="left" id="qmN-5u-j4O"/>
+                        <button width="1" alignment="left" title="Button" id="1Gx-5D-gEW"/>
+                        <switch width="1" alignment="left" value="YES" title="Switch" id="iSs-fb-6w1"/>
+                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="5Nt-wU-mGQ"/>
+                        <label width="136" alignment="left" text="Label" textAlignment="center" id="ZsS-3E-UL8"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="638" y="57.75"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="CoreDataSample_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="361" y="955"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="226" y="1174"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="CoreDataSample_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="555" y="1238"/>
+        </scene>
+        <!--Core Data Controller-->
+        <scene sceneID="upm-6A-wsz">
+            <objects>
+                <controller id="vgb-wM-rWz" customClass="CoreDataController" customModule="CoreDataSample_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="Ia0-FP-Uwy">
+                            <items>
+                                <tableRow identifier="therows" id="WB6-XT-ZvR" customClass="CoreDatarowcontroller" customModule="CoreDataSample_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="jZC-KI-xiz">
+                                        <items>
+                                            <label alignment="left" text="Label" id="e8B-tA-S5o"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="theLabel" destination="e8B-tA-S5o" id="v3k-r1-f7V"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="theTable" destination="Ia0-FP-Uwy" id="T6o-8T-sNY"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="436" y="505"/>
+        </scene>
+        <!--Animation View Controller-->
+        <scene sceneID="44B-Nl-P63">
+            <objects>
+                <controller id="Yhb-Jr-EMB" customClass="AnimationViewController" customModule="CoreDataSample_WatchKit_Extension">
+                    <items>
+                        <imageView width="1" height="1" alignment="left" id="DnN-D4-XoJ"/>
+                    </items>
+                    <connections>
+                        <outlet property="theimage" destination="DnN-D4-XoJ" id="Abc-K6-zZd"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="9" y="783"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="MMy-iy-QtV">
+            <objects>
+                <controller id="ZPT-Lv-Fiv" customClass="InterfaceController" customModule="CoreDataSample_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Controllers" id="h57-My-JN6">
+                            <connections>
+                                <segue destination="Fop-FW-SbD" kind="push" id="4gG-VW-iHs"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Speech Dictation" id="Trf-u7-OuC">
+                            <connections>
+                                <action selector="onSpeak" destination="ZPT-Lv-Fiv" id="0gL-mn-8a5"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Recording" id="32x-s1-wfB">
+                            <connections>
+                                <segue destination="ZrI-Ka-Mzx" kind="push" id="Pha-yP-gdM"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="CoreData" id="5EF-6Q-eFc">
+                            <connections>
+                                <segue destination="vgb-wM-rWz" kind="push" id="w0d-CG-XFN"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="TableView" id="Uxo-Yq-Ijk">
+                            <connections>
+                                <segue destination="2uJ-p8-WWW" kind="push" id="3hQ-Yv-K0v"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Animation" id="CWu-qV-MNz">
+                            <connections>
+                                <segue destination="Yhb-Jr-EMB" kind="push" id="P23-Dt-9WA"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="open Parent App" id="7sH-pu-UhV">
+                            <connections>
+                                <action selector="openparent" destination="ZPT-Lv-Fiv" id="w3S-Cc-HlZ"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="openApp" destination="7sH-pu-UhV" id="8gk-HE-ZII"/>
+                        <outlet property="record" destination="32x-s1-wfB" id="tpZ-YK-2Yg"/>
+                        <outlet property="speak" destination="Trf-u7-OuC" id="xwh-mO-2WB"/>
+                        <outlet property="thecontrollers" destination="h57-My-JN6" id="eSc-eG-PKY"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="64" y="229"/>
+        </scene>
+    </scenes>
+</document>
